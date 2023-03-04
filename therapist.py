@@ -38,6 +38,6 @@ ui = gr.Interface(
     fn=transcribe,
     inputs=gr.Audio(source="microphone", type="filepath"),
     outputs="text",
-    server="0.0.0.0",
+    server_name="0.0.0.0",
 ).launch()
 ui.launch()
