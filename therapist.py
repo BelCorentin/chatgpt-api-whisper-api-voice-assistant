@@ -36,7 +36,8 @@ def transcribe(audio):
 
 ui = gr.Interface(
     fn=transcribe,
-    inputs=gr.Audio(source="microphone", type="filepath", server="0.0.0.0"),
+    inputs=gr.Audio(source="microphone", type="filepath"),
     outputs="text",
+    server="0.0.0.0",
 ).launch()
 ui.launch()
