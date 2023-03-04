@@ -24,7 +24,7 @@ def transcribe(audio):
     system_message = response["choices"][0]["message"]
     messages.append(system_message)
 
-    subprocess.call(["say", system_message["content"]])
+    subprocess.call(["espeak", system_message["content"]])
 
     chat_transcript = ""
     for message in messages:
@@ -38,6 +38,5 @@ ui = gr.Interface(
     fn=transcribe,
     inputs=gr.Audio(source="microphone", type="filepath"),
     outputs="text",
-    server_name="0.0.0.0",
-).launch()
+).launch(share=True)
 ui.launch()
