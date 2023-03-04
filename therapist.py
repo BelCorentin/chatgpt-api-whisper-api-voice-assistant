@@ -1,7 +1,6 @@
 import gradio as gr
-import openai, config, subprocess
+import openai, subprocess
 
-openai.api_key = config.OPENAI_API_KEY
 
 messages = [
     {
